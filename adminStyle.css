@@ -1,0 +1,134 @@
+/* adminStyle.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+}
+
+.main {
+    background: pink;
+    height: calc(100% - 50px); /* Adjust height to account for top bar */
+    display: flex;
+}
+
+.sidebar {
+    height: 100%;
+    width: 30vh;
+    background: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+}
+
+.sidebar h3 {
+    font-weight: 500;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.sidebar-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: white;
+    background-color: #ff5e00;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sidebar-button:hover {
+    background-color: #0056b3;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background: #fff;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px; /* Add margin to push the table down from the top */
+}
+
+.content th, .content td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.content th {
+    background-color: #f2f2f2;
+}
+
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+#searchInput {
+    padding: 5px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+#searchButton {
+    padding: 5px 10px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#searchButton:hover {
+    background-color: #0056b3;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    height: 50px;
+}
+
+#admin-welcome {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.sidebar-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 16px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+}
+
+.sidebar-button:hover {
+    background-color: #0056b3;
+}
+
+nav .logo {
+    margin-right: 100px;
+}

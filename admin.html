@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="top-bar">
+      <span><Call size="32" color="#FF8A65" /></span>
+    </div>
+    <nav>
+      <div class="logo">
+        <a href="index.html"
+          ><img src="https://iocl.com/assets/images/logo.gif" alt="Iocl logo"
+        /></a>
+      </div>
+      <div id="admin-welcome">
+        <h1>Welcome Admin</h1>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="admin-box">
+        <form id="admin-login" class="admin-input-group">
+          <input
+            type="text"
+            class="admin-input-field"
+            placeholder="Admin Id"
+            id="adminId"
+            required
+          />
+          <input
+            type="text"
+            class="admin-input-field"
+            placeholder="Admin Password"
+            id="adminPass"
+            required
+          />
+
+          <button type="submit" class="admin-submit-btn" onclick="Panal()">
+            Log In
+          </button>
+        </form>
+      </div>
+    </div>
+    <script src="indexscript.js"></script>
+  </body>
+</html>

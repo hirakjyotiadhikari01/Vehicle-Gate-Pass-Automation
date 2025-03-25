@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="adminStyle.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <span><Call size="32" color="#FF8A65"/></span>
+    </div>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="https://iocl.com/assets/images/logo.gif" alt="Iocl logo"></a>
+        </div>
+        <div id="admin-welcome">
+            <h1>Admin Panel</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search applications..." id="searchInput">
+            <button id="searchButton">Search</button>
+        </div>
+    </nav>
+
+    <div class="main">
+        <div class="sidebar">
+            <button class="sidebar-button">All</button>
+            <button class="sidebar-button">New</button>
+            <button class="sidebar-button">Requests</button>
+            <button class="sidebar-button">Accepted</button>
+            <button class="sidebar-button">Rejected</button>
+        </div>
+        <div class="content">
+            <div class="table-container">
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Employee ID</th>
+                            <th>Phone</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Employee data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('fetch_employees.php')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#employeeTable tbody');
+                    tbody.innerHTML = ''; // Clear any existing rows
+                    data.forEach(employee => {
+                        const tr = document.createElement('tr');
+                        tr.innerHTML = `
+                            <td>${employee.name}</td>
+                            <td>${employee.department}</td>
+                            <td>${employee.employee_id}</td>
+                            <td>${employee.phone}</td>
+                            <td>${employee.email}</td>
+                            <td>
+                                <button onclick="approve(${employee.employee_id})">Approve</button>
+                                <button onclick="reject(${employee.employee_id})">Reject</button>
+                            </td>
+                        `;
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error fetching employee data:', error));
+        });
+
+        function approve(empId) {
+            // Implement approve logic here
+            alert('Approved ' + empId);
+        }
+
+        function reject(empId) {
+            // Implement reject logic here
+            alert('Rejected ' + empId);
+        }
+    </script>
+</body>
+</html>
